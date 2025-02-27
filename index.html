@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shift Now - Die letzte Nachricht</title>
+    <style>
+        /* Grundlegende Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Bereich */
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://placehold.co/1200x600/9370DB/ffffff?text=Sonnenaufgang');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 120px 20px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .subheadline {
+            font-size: 22px;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #FF6B6B;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #FF5252;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Problem Bereich */
+        .problem {
+            padding: 80px 0;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+
+        h2 {
+            font-size: 36px;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        h2:after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #9370DB;
+        }
+
+        .columns {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .column {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+            margin: 10px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .icon {
+            font-size: 40px;
+            color: #9370DB;
+            margin-bottom: 20px;
+        }
+
+        .closing-text {
+            margin-top: 50px;
+            font-size: 22px;
+            font-weight: 500;
+        }
+
+        /* Lösungs Bereich */
+        .solution {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .solution-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .ebook-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .ebook-image img {
+            max-width: 100%;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .benefits {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+        }
+
+        .benefit-item {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .check {
+            color: #4CAF50;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* Kapitel Bereich */
+        .chapters {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        .chapter-boxes {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .chapter-box {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 15px;
+            width: 45%;
+            min-width: 300px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: left;
+        }
+
+        .chapter-title {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #9370DB;
+        }
+
+        .bonus {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #FFF3E0;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        /* Autorin Bereich */
+        .author {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .author-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* Preis Bereich */
+        .pricing {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        .price-box {
+            background-color: white;
+            border-radius: 10px;
+            padding: 40px;
+            max-width: 500px;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .price {
+            font-size: 48px;
+            font-weight: bold;
+            color: #9370DB;
+            margin: 20px 0;
+        }
+
+        .price-description {
+            margin-bottom: 20px;
+        }
+
+        .guarantee {
+            margin: 30px 0;
+            font-style: italic;
+        }
+
+        .payment-methods {
+            margin: 20px 0;
+        }
+
+        .payment-icon {
+            margin: 0 10px;
+            font-size: 30px;
+            color: #666;
+        }
+
+        .final-cta {
+            margin-top: 30px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .footer-links a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 32px;
+            }
+
+            .subheadline {
+                font-size: 18px;
+            }
+
+            .chapter-box {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Bereich -->
+    <header>
+        <div class="container">
+            <div class="logo">SHIFT NOW</div>
+            <h1>Die letzte Nachricht – Dein Weg zum Loslassen</h1>
+            <p class="subheadline">Transformiere deinen Schmerz in neue Energie und manifestiere die Liebe, die du verdienst</p>
+            <a href="#pricing" class="cta-button">E-BOOK JETZT HOLEN</a>
+        </div>
+    </header>
+
+    <!-- Problem Bereich -->
+    <section class="problem">
+        <div class="container">
+            <h2>Kennst du das Gefühl?</h2>
+            <div class="columns">
+                <div class="column">
+                    <div class="icon">📱</div>
+                    <p>Du schreibst in Gedanken immer noch Nachrichten an ihn/sie, die du nie abschicken wirst.</p>
+                </div>
+                <div class="column">
+                    <div class="icon">❤️</div>
+                    <p>Du kannst emotional nicht loslassen, obwohl du weißt, dass es Zeit ist, weiterzugehen.</p>
+                </div>
+                <div class="column">
+                    <div class="icon">🌫️</div>
+                    <p>Du fühlst dich energetisch blockiert und kannst keine neue Verbindung aufbauen.</p>
+                </div>
+            </div>
+            <p class="closing-text">Du bist nicht allein. Und es gibt einen Weg heraus.</p>
+        </div>
+    </section>
+
+    <!-- Lösungs Bereich -->
+    <section class="solution">
+        <div class="container">
+            <h2>Stelle dir vor...</h2>
+            <div class="solution-content">
+                <div class="ebook-image">
+                    <img src="https://placehold.co/400x500/9370DB/ffffff?text=E-Book+Cover" alt="E-Book Cover">
+                </div>
+                <div class="benefits">
+                    <p class="benefit-item"><span class="check">✓</span> Du kannst endlich loslassen, was dir nicht mehr dient</p>
+                    <p class="benefit-item"><span class="check">✓</span> Du fühlst dich energetisch frei und offen für Neues</p>
+                    <p class="benefit-item"><span class="check">✓</span> Du manifestierst bewusst die Liebe, die du verdienst</p>
+                    <p class="benefit-item"><span class="check">✓</span> Du erkennst deinen eigenen Wert und strahlst ihn aus</p>
+                    <p class="benefit-item"><span class="check">✓</span> Du ziehst einen Partner an, der mit beiden Beinen im Leben steht</p>
+                    <a href="#pricing" class="cta-button">JA, ICH BIN BEREIT FÜR VERÄNDERUNG</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kapitel Bereich -->
+    <section class="chapters">
+        <div class="container">
+            <h2>Was dich im E-Book erwartet</h2>
+            <div class="chapter-boxes">
+                <div class="chapter-box">
+                    <div class="chapter-title">Teil 1: Die Emotion verstehen</div>
+                    <p>Erkenne, warum du noch festhältst und wie du deine Muster durchbrechen kannst.</p>
+                </div>
+                <div class="chapter-box">
+                    <div class="chapter-title">Teil 2: Die letzte Nachricht</div>
+                    <p>Schreibe sie auf, erkenne ihre Bedeutung und befreie dich von ihrer Last.</p>
+                </div>
+                <div class="chapter-box">
+                    <div class="chapter-title">Teil 3: Der Shift</div>
+                    <p>Praktische Übungen und Manifestationsformeln, um wirklich loszulassen.</p>
+                </div>
+                <div class="chapter-box">
+                    <div class="chapter-title">Teil 4: Der Neuanfang</div>
+                    <p>Gestalte deine neue Energie bewusst und ziehe an, was du wirklich verdienst.</p>
+                </div>
+            </div>
+            <div class="bonus">
+                <strong>+ Bonus:</strong> 21-Tage-Manifestations-Workbook mit täglichen Übungen
+            </div>
+            <div style="margin-top: 40px;">
+                <a href="#pricing" class="cta-button">E-BOOK JETZT SICHERN</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Autorin Bereich -->
+    <section class="author">
+        <div class="container">
+            <h2>Über die Autorin</h2>
+            <div class="author-content">
+                <p>Nach einer tiefen persönlichen Krise und dem Schmerz einer verlorenen Liebe entdeckte ich die transformative Kraft der bewussten Energiearbeit und Manifestation. Was als eigener Heilungsprozess begann, wurde zu einer Methode, die ich nun mit dir teilen möchte.</p>
+                <br>
+                <p>Ich habe erlebt, wie kraftvoll es ist, wenn man seine Energie neu ausrichtet und bewusst manifestiert. Heute lebe ich in einer neuen Realität – und du kannst das auch.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preis Bereich -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2>Investiere in deine Transformation</h2>
+            <div class="price-box">
+                <div class="price">19,97€</div>
+                <p class="price-description">Sofortiger Download nach Zahlung</p>
+                <p class="guarantee">14 Tage Geld-zurück-Garantie, wenn du nicht zufrieden bist.</p>
+                <div class="payment-methods">
+                    <span class="payment-icon">💳</span>
+                    <span class="payment-icon">🅿️</span>
+                </div>
+                <div class="final-cta">
+                    <a href="#" class="cta-button">JA, ICH WILL LOSLASSEN UND NEU BEGINNEN</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 Shift Now. Alle Rechte vorbehalten.</p>
+            <div class="footer-links">
+                <a href="#">Impressum</a> | <a href="#">Datenschutz</a> | <a href="#">Kontakt</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
