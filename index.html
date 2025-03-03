@@ -33,12 +33,15 @@
 
     /* Header Bereich */
     header {
-        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://placehold.co/1200x600/9370DB/ffff?text=Sonnenaufgang');
-        background-size: cover;
-        background-position: center;
-        color: white;
+        background-color: #f9f9f9;
+        color: #333;
         text-align: center;
-        padding: 120px 20px;
+        padding: 60px 20px;
+    }
+
+    .header-content {
+        max-width: 1000px;
+        margin: 0 auto;
     }
 
     .logo {
@@ -46,11 +49,13 @@
         font-weight: bold;
         letter-spacing: 2px;
         margin-bottom: 30px;
+        color: #9370DB;
     }
 
     h1 {
         font-size: 42px;
         margin-bottom: 20px;
+        color: #333;
     }
 
     .subheadline {
@@ -306,13 +311,58 @@
     </style>
 </head>
 <body>
-    <!-- Header Bereich -->
+    <!-- Header Bereich mit SVG -->
     <header>
         <div class="container">
             <div class="logo">SHIFT NOW</div>
-            <h1>Die letzte Nachricht – Dein Weg zum Loslassen</h1>
-            <p class="subheadline">Transformiere deinen Schmerz in neue Energie und manifestiere die Liebe, die du verdienst</p>
-            <a href="#pricing" class="cta-button">E-BOOK JETZT HOLEN</a>
+            <div class="header-content">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+                    <!-- Hintergrund -->
+                    <rect width="800" height="400" fill="#fff9f9" rx="10" ry="10" stroke="#FF6B6B" stroke-width="2"/>
+
+                    <!-- Titel -->
+                    <text x="400" y="80" font-family="'Segoe UI', sans-serif" font-size="40" font-weight="bold" text-anchor="middle" fill="#333">Die letzte Nachricht</text>
+                    <text x="400" y="130" font-family="'Segoe UI', sans-serif" font-size="30" text-anchor="middle" fill="#333">Dein Weg zum Loslassen</text>
+
+                    <!-- Untertitel -->
+                    <text x="400" y="180" font-family="'Segoe UI', sans-serif" font-size="18" text-anchor="middle" fill="#555">Transformiere deinen Schmerz in neue Energie</text>
+                    <text x="400" y="210" font-family="'Segoe UI', sans-serif" font-size="18" text-anchor="middle" fill="#555">und manifestiere die Liebe, die du verdienst</text>
+
+                    <!-- Person (stilisiert) -->
+                    <circle cx="250" cy="300" r="30" fill="#9370DB" opacity="0.8"/>
+                    <rect x="240" y="330" width="20" height="40" fill="#9370DB" opacity="0.8"/>
+
+                    <!-- Nachricht/Brief -->
+                    <rect x="320" y="290" width="40" height="30" fill="white" stroke="#333" stroke-width="1"/>
+                    <path d="M320,290 L340,310 L360,290" fill="none" stroke="#333" stroke-width="1"/>
+
+                    <!-- Schmetterlinge, die aus der Nachricht fliegen -->
+                    <g transform="translate(380, 280) rotate(30)">
+                        <path d="M0,0 C5,-10 15,-10 20,0 C15,10 5,10 0,0 Z" fill="#FF6B6B" opacity="0.8"/>
+                        <path d="M0,0 C-5,-10 -15,-10 -20,0 C-15,10 -5,10 0,0 Z" fill="#FF6B6B" opacity="0.8"/>
+                        <ellipse cx="0" cy="0" rx="2" ry="10" fill="#333"/>
+                    </g>
+
+                    <g transform="translate(420, 250) rotate(45)">
+                        <path d="M0,0 C5,-10 15,-10 20,0 C15,10 5,10 0,0 Z" fill="#9370DB" opacity="0.7"/>
+                        <path d="M0,0 C-5,-10 -15,-10 -20,0 C-15,10 -5,10 0,0 Z" fill="#9370DB" opacity="0.7"/>
+                        <ellipse cx="0" cy="0" rx="2" ry="10" fill="#333"/>
+                    </g>
+
+                    <g transform="translate(460, 220) rotate(15)">
+                        <path d="M0,0 C5,-10 15,-10 20,0 C15,10 5,10 0,0 Z" fill="#FF6B6B" opacity="0.6"/>
+                        <path d="M0,0 C-5,-10 -15,-10 -20,0 C-15,10 -5,10 0,0 Z" fill="#FF6B6B" opacity="0.6"/>
+                        <ellipse cx="0" cy="0" rx="2" ry="10" fill="#333"/>
+                    </g>
+
+                    <g transform="translate(500, 190) rotate(60)">
+                        <path d="M0,0 C5,-10 15,-10 20,0 C15,10 5,10 0,0 Z" fill="#9370DB" opacity="0.5"/>
+                        <path d="M0,0 C-5,-10 -15,-10 -20,0 C-15,10 -5,10 0,0 Z" fill="#9370DB" opacity="0.5"/>
+                        <ellipse cx="0" cy="0" rx="2" ry="10" fill="#333"/>
+                    </g>
+                </svg>
+            </div>
+            <a href="https://www.digistore24.com/product/599463" class="cta-button">E-BOOK JETZT HOLEN</a>
         </div>
     </header>
 
@@ -344,7 +394,7 @@
             <h2>Stelle dir vor...</h2>
             <div class="solution-content">
                 <div class="ebook-image">
-                    <img src="https://placehold.co/400x500/9370DB/ffff?text=E-Book+Cover" alt="E-Book Cover">
+                    <img src="https://placehold.co/400x500/9370DB/ffffff?text=E-Book+Cover" alt="E-Book Cover">
                 </div>
                 <div class="benefits">
                     <p class="benefit-item"><span class="check">✓</span> Du kannst endlich loslassen, was dir nicht mehr dient</p>
@@ -352,7 +402,7 @@
                     <p class="benefit-item"><span class="check">✓</span> Du manifestierst bewusst die Liebe, die du verdienst</p>
                     <p class="benefit-item"><span class="check">✓</span> Du erkennst deinen eigenen Wert und strahlst ihn aus</p>
                     <p class="benefit-item"><span class="check">✓</span> Du ziehst einen Partner an, der mit beiden Beinen im Leben steht</p>
-                    <a href="#pricing" class="cta-button">JA, ICH BIN BEREIT FÜR VERÄNDERUNG</a>
+                    <a href="https://www.digistore24.com/product/599463" class="cta-button">JA, ICH BIN BEREIT FÜR VERÄNDERUNG</a>
                 </div>
             </div>
         </div>
@@ -384,7 +434,7 @@
                 <strong>+ Bonus:</strong> 21-Tage-Manifestations-Workbook mit täglichen Übungen
             </div>
             <div style="margin-top: 40px;">
-                <a href="#pricing" class="cta-button">E-BOOK JETZT SICHERN</a>
+                <a href="https://www.digistore24.com/product/599463" class="cta-button">E-BOOK JETZT SICHERN</a>
             </div>
         </div>
     </section>
