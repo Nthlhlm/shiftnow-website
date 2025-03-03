@@ -25,16 +25,92 @@
         }
 
         /* Header Bereich */
-        header {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://placehold.co/1200x600/9370DB/ffffff?text=Sonnenaufgang');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 120px 20px;
-        }
+       <!-- Header Bereich -->
+<header>
+<div class="container">
+    <!-- SVG Header Bild -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" style="width:100%; height:auto; margin-bottom:30px;">
+        <!-- Hintergrund mit sanftem Farbverlauf -->
+        <defs>
+            <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#fff9f9" />
+                <stop offset="100%" stop-color="#ffefef" />
+            </linearGradient>
 
-        .logo {
+            <!-- Natürlicherer Schmetterling -->
+            <symbol id="butterfly" viewBox="0 0 60 50">
+                <!-- Linker Flügel -->
+                <path d="M30,10 C25,0 10,5 5,15 C0,25 15,35 30,25" fill="#FF6B6B" stroke="#FF4B4B" stroke-width="1" />
+                <!-- Rechter Flügel -->
+                <path d="M30,10 C35,0 50,5 55,15 C60,25 45,35 30,25" fill="#FF6B6B" stroke="#FF4B4B" stroke-width="1" />
+                <!-- Körper -->
+                <path d="M30,10 Q30,17.5 30,25" stroke="#444" stroke-width="1.5" />
+                <!-- Fühler -->
+                <path d="M30,10 Q27,5 25,7" stroke="#444" stroke-width="0.8" />
+                <path d="M30,10 Q33,5 35,7" stroke="#444" stroke-width="0.8" />
+            </symbol>
+        </defs>
+
+        <!-- Hintergrund -->
+        <rect width="1200" height="400" fill="url(#bg-gradient)" />
+
+        <!-- Dekorative Elemente - sanfte Wellen -->
+        <path d="M0,320 C200,280 400,350 600,300 C800,250 1000,320 1200,280 L1200,400 L0,400 Z" fill="#ffefef" opacity="0.7" />
+        <path d="M0,350 C200,320 400,380 600,340 C800,300 1000,360 1200,330 L1200,400 L0,400 Z" fill="#ffdada" opacity="0.5" />
+
+        <!-- Natürlichere Silhouette einer Person -->
+        <!-- Beine -->
+        <path d="M590,330 C590,300 595,280 600,260" stroke="#444" stroke-width="10" stroke-linecap="round" />
+        <path d="M610,330 C610,300 605,280 600,260" stroke="#444" stroke-width="10" stroke-linecap="round" />
+
+        <!-- Torso -->
+        <path d="M600,260 L600,200" stroke="#444" stroke-width="12" stroke-linecap="round" />
+
+        <!-- Arme -->
+        <path d="M600,210 C585,220 575,230 580,245" stroke="#444" stroke-width="8" stroke-linecap="round" />
+        <path d="M600,210 C615,220 625,230 620,245" stroke="#444" stroke-width="8" stroke-linecap="round" />
+
+        <!-- Kopf -->
+        <circle cx="600" cy="175" r="25" fill="#444" />
+
+        <!-- Brief/Nachricht - deutlicher -->
+        <rect x="565" y="230" width="70" height="50" fill="white" stroke="#FF6B6B" stroke-width="3" rx="5" ry="5" />
+        <line x1="575" y1="245" x2="625" y2="245" stroke="#FF6B6B" stroke-width="2" />
+        <line x1="575" y1="255" x2="615" y2="255" stroke="#FF6B6B" stroke-width="2" />
+        <line x1="575" y1="265" x2="620" y2="265" stroke="#FF6B6B" stroke-width="2" />
+
+        <!-- Natürlichere Schmetterlinge -->
+        <use href="#butterfly" x="630" y="180" width="50" height="40" />
+        <use href="#butterfly" x="670" y="150" width="45" height="35" transform="rotate(15, 670, 150)" opacity="0.9" />
+        <use href="#butterfly" x="710" y="130" width="40" height="30" transform="rotate(-10, 710, 130)" opacity="0.8" />
+        <use href="#butterfly" x="750" y="150" width="35" height="25" transform="rotate(20, 750, 150)" opacity="0.7" />
+        <use href="#butterfly" x="790" y="180" width="30" height="20" transform="rotate(-15, 790, 180)" opacity="0.6" />
+
+        <!-- Lichter/Partikel -->
+        <circle cx="650" cy="200" r="5" fill="#FFD166" />
+        <circle cx="680" cy="170" r="4" fill="#FFD166" opacity="0.9" />
+        <circle cx="710" cy="150" r="6" fill="#FFD166" opacity="0.8" />
+        <circle cx="740" cy="170" r="4" fill="#FFD166" opacity="0.7" />
+        <circle cx="770" cy="200" r="5" fill="#FFD166" opacity="0.6" />
+
+        <!-- Titel mit korrekter Schreibweise -->
+        <text x="600" y="80" font-family="Arial, sans-serif" font-size="44" font-weight="bold" text-anchor="middle" fill="#444">
+            Die letzte Nachricht
+        </text>
+        <text x="600" y="125" font-family="Arial, sans-serif" font-size="26" text-anchor="middle" fill="#666">
+            Dein Weg zum Loslassen &amp; Neubeginn
+        </text>
+
+        <!-- Subtiler Untertitel mit korrekter Schreibweise -->
+        <text x="600" y="360" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" fill="#FF6B6B" opacity="0.8">
+            Verwandle deine letzte Nachricht in den ersten Schritt deiner Freiheit
+        </text>
+    </svg>
+    
+    <div class="logo">SHIFT NOW</div>
+    <a href="#pricing" class="cta-button">E-BOOK JETZT HOLEN</a>
+</div>
+</header>        .logo {
             font-size: 28px;
             font-weight: bold;
             letter-spacing: 2px;
